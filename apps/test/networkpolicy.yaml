@@ -1,0 +1,30 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: express-test-server-policy
+  namespace: default
+spec:
+  endpointSelector:
+    matchLabels:
+      app: express-test-server
+  ingress:
+    - fromEndpoints:
+        - matchLabels:
+            "k8s:io.kubernetes.pod.namespace": ingress-nginx
+      toPorts:
+        - ports:
+            - port: "8210"
+              protocol: TCP
+  egress:
+    - toEndpoints:
+        - matchLabels:
+            "k8s:io.kubernetes.pod.namespace": kube-system
+      toPorts:
+        - ports:
+            - port: "53"
+              protocol: UDP
+            - port: "53"
+              protocol: TCP
+    - toFQDNs:
+        - matchPattern: "*.docker.io"
+        - matchPattern: "*.ghcr.io"
