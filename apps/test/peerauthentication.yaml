@@ -4,8 +4,5 @@ metadata:
   name: express-test-server-mtls
   namespace: default
 spec:
-  selector:
-    matchLabels:
-      app: express-test-server
   mtls:
-    mode: STRICT
+    mode: PERMISSIVE
