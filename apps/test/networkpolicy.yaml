@@ -25,6 +25,15 @@ spec:
               protocol: UDP
             - port: "53"
               protocol: TCP
+    - toEndpoints:
+        - matchLabels:
+            "k8s:io.kubernetes.pod.namespace": istio-system
+      toPorts:
+        - ports:
+            - port: "15010"
+              protocol: TCP
+            - port: "15012"
+              protocol: TCP
     - toFQDNs:
         - matchPattern: "*.docker.io"
         - matchPattern: "*.ghcr.io"
