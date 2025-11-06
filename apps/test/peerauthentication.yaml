@@ -5,4 +5,4 @@ metadata:
   namespace: express-test
 spec:
   mtls:
-    mode: PERMISSIVE
+    mode: STRICT
