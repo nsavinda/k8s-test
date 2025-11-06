@@ -8,6 +8,12 @@ spec:
     istio: ingressgateway  # Assumes Istio ingress gateway is installed
   servers:
     - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - test-site.rs.nirmalsavinda.online
+    - port:
         number: 443
         name: https
         protocol: HTTPS
