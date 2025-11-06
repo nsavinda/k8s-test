@@ -6,7 +6,7 @@ metadata:
 spec:
   secretName: express-test-tls
   issuerRef:
-    name: letsencrypt-prod
+    name: selfsigned-issuer
     kind: ClusterIssuer
   dnsNames:
     - test-site.rs.nirmalsavinda.online
