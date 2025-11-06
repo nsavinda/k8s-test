@@ -8,7 +8,7 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-    - host: site.siyal.nirmalsavinda.info
+    - host: test-site.rs.nirmalsavinda.online
       http:
         paths:
           - path: /
