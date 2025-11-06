@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: express-test-server-ingress
-  namespace: default
+  namespace: express-test
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     kubernetes.io/ingress.class: "nginx"
