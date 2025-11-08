@@ -14,8 +14,6 @@ spec:
     metadata:
       labels:
         app: express-test-server
-      annotations:
-        sidecar.istio.io/inject: "true"
     spec:
       containers:
         - name: express-test-server
