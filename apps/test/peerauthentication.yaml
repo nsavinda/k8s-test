@@ -1,0 +1,11 @@
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: express-test-server-mtls
+  namespace: express-test
+spec:
+  selector:
+    matchLabels:
+      app: express-test-server
+  mtls:
+    mode: PREMPTIVE

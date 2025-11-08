@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: express-test-server
-  namespace: express-test
   labels:
     app: express-test-server
 spec:
@@ -14,6 +13,8 @@ spec:
     metadata:
       labels:
         app: express-test-server
+      annotations:
+        sidecar.istio.io/inject: "true"
     spec:
       containers:
         - name: express-test-server
