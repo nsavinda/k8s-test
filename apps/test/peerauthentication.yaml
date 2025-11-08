@@ -8,4 +8,4 @@ spec:
     matchLabels:
       app: express-test-server
   mtls:
-    mode: PREMPTIVE
+    mode: PERMISSIVE
